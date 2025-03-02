@@ -61,7 +61,7 @@ body{
 h1, h2, h3, h4{
     font-weight: 100;
     text-transform: uppercase;
-    width: min-content;
+    /* width: min-content; */
     line-height: 1;
 }
 
@@ -90,16 +90,16 @@ h1, h2, h3, h4{
     background-color: rgb(0 0 0 / .87);
 }
 
-.gallery > .frame:nth-child(2) > .frame_content > .frame_media{
-    background-image: url(images/1.jpg);
+.gallery > .frame:nth-child(5) > .frame_content > .frame_media{
+    background-image: url(images/i1.jpg);
 }
 
-.gallery > .frame:nth-child(4) > .frame_content > .frame_media{
-    background-image: url(images/2.jpg);
+.gallery > .frame:nth-child(8) > .frame_content > .frame_media{
+    background-image: url(images/i3.jpg);
 }
 
 .gallery > .frame:nth-child(7) > .frame_content > .frame_media{
-    background-image: url(images/3.jpg);
+    background-image: url(images/i3.jpg);
 }
 
 .gallery > .frame:nth-child(9) > .frame_content > .frame_media{
