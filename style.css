@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+body {
+	scrollbar-width: none;
+}
+body::-webkit-scrollbar { 
+	display: none;
+}
+
+:root{
+    --index: calc(1vw + 1vh);
+    --gutter: 30px;
+    --side-small: 26;
+    --side-big: 36;
+    --depth: 4000px;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+body{
+    background: #000;
+    color: #FFFFFF;
+    font-size: calc(var(--index * .8));
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.75;
+    height: var(--depth);
+    font-weight: 300;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    perspective: 1500px;
+}
+
+.gallery{
+    transform-style: preserve-3d;
+    height: 100%;
+}
+
+
+.frame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition), opacity .75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+
+h1, h2, h3, h4{
+    font-weight: 100;
+    text-transform: uppercase;
+    width: min-content;
+    line-height: 1;
+}
+
+.frame h1{
+    text-align: center;
+    font-size: calc(var(--index) * 3.3);
+}
+
+.frame_media{
+    position: relative;
+    width: calc(var(--index) * var(--side-small));
+    height: calc(var(--index) * var(--side-big));
+    background-position: center;
+    background-size: cover;
+}
+
+.frame_media_left{
+    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame_media_right{
+    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.frame_bg{
+    background-color: rgb(0 0 0 / .87);
+}
+
+.gallery > .frame:nth-child(2) > .frame_content > .frame_media{
+    background-image: url(images/1.jpg);
+}
+
+.gallery > .frame:nth-child(4) > .frame_content > .frame_media{
+    background-image: url(images/2.jpg);
+}
+
+.gallery > .frame:nth-child(7) > .frame_content > .frame_media{
+    background-image: url(images/3.jpg);
+}
+
+.gallery > .frame:nth-child(9) > .frame_content > .frame_media{
+    background-image: url(images/4.jpg);
+}
+
+video.frame_media{
+    width: calc(var(--index) * var(--side-big));
+    height: calc(var(--index) * var(--side-small));
+}
+
+video.frame_media_right{
+    left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+video.frame_media_left{
+    right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+.text_right > *{
+    position: relative;
+    left: 18vw;
+}
+
+.text_left > *{
+    position: relative;
+    right: 18vw;
+}
+
+.frame h3{
+    font-size: calc(var(--index) * 3);
+}
+
+.frame p{
+    max-width: 30vw;
+    margin-top: 3vh;
+}
+
+.sound{
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    cursor: pointer;
+    width: 24px;
+    transition: .25s ease;
+    opacity: .25;
+}
+
+.sound.paused{
+    opacity: 1;
+}
